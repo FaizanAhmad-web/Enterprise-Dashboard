@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
-=======
+@tailwind utilities;clea
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,6 +15,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 a {
   font-weight: 500;
@@ -29,8 +33,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -71,4 +73,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
->>>>>>> 5c631a51e63c440095461a0b4f60a6e5c164d193
