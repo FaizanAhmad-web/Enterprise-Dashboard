@@ -1,17 +1,28 @@
+import { Link, useLocation } from "react-router-dom";
+
 const Sidebar = () => {
-  const menu = ["Dashboard", "Employees", "Tasks", "Reports"];
+  const location = useLocation();
+
+  const linkClass = (path) =>
+    `block px-4 py-2 rounded ${
+      location.pathname === path
+        ? "bg-blue-600 text-white"
+        : "text-gray-700 hover:bg-gray-200"
+    }`;
+
   return (
-    <div className="w-64 h-screen bg-gray-800 text-white p-4 flex flex-col">
-      <h2 className="text-2xl font-bold mb-6">Menu</h2>
-      {menu.map((item, idx) => (
-        <a
-          key={idx}
-          href="#"
-          className="py-2 px-3 rounded hover:bg-gray-700 mb-2"
-        >
-          {item}
-        </a>
-      ))}
+    <div className="w-64 bg-white shadow h-screen p-4">
+      <h2 className="text-xl font-bold mb-6">Enterprise</h2>
+
+      <nav className="space-y-2">
+        <Link to="/" className={linkClass("/")}>
+          Dashboard
+        </Link>
+
+        <Link to="/tasks" className={linkClass("/tasks")}>
+          Tasks
+        </Link>
+      </nav>
     </div>
   );
 };
