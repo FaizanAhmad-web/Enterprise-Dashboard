@@ -1,26 +1,43 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Enterprise-Dashboard
-=======
-=======
->>>>>>> 5c631a51e63c440095461a0b4f60a6e5c164d193
-# React + Vite
+# Enterprise Dashboard (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Enterprise Dashboard built using React.  
+This project simulates a real-world enterprise admin panel with KPIs, employee management, charts, and task tracking.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- KPI cards with business metrics
+- Employee performance table
+- Interactive charts for data visualization
+- Task management (Add, Complete, Undo, Delete)
+- Persistent data using localStorage
+- Responsive layout with sidebar & navbar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- React (Hooks: useState, useEffect)
+- JavaScript (ES6+)
+- Tailwind CSS
+- Chart.js / Recharts
+- LocalStorage
+- Vite / CRA
 
-## React Compiler
+## 📂 Project Structure
+src/
+├── components/
+│ ├── Sidebar.jsx
+│ ├── Navbar.jsx
+│ ├── KpiCard.jsx
+│ ├── ChartSection.jsx
+│ ├── EmployeeTable.jsx
+│ └── Task.jsx
+├── data/
+│ └── dashboardData.js
+├── pages/
+│ └── Dashboard.jsx
+└── App.jsx
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-<<<<<<< HEAD
->>>>>>> 5c631a5 (Day 1: Initial project setup with React Vite + Tailwind CDN and components)
-=======
->>>>>>> 5c631a51e63c440095461a0b4f60a6e5c164d193
+## 💡 What I Learned
+- Component-based architecture
+- State management using React Hooks
+- Data persistence using localStorage
+- Building scalable UI layouts
+- Writing clean and reusable components

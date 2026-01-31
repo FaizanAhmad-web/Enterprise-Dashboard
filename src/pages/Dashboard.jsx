@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import KpiCard from "../components/KpiCard";
@@ -7,6 +8,12 @@ import { kpiData, employees } from "../data/dashboardData";
 
 
 const Dashboard = () => {
+const [search, setSearch] = useState("");
+const filteredEmployees = employees.filter((emp) =>
+  emp.name.toLowerCase().includes(search.toLowerCase()) ||
+  emp.role.toLowerCase().includes(search.toLowerCase())
+);
+
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
@@ -14,7 +21,8 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
-        <Navbar />
+        <Navbar search={search} setSearch={setSearch} />
+
 
         <main className="flex-1 overflow-y-auto p-6 w-full min-w-0">
           {/* KPI Section */}
@@ -35,7 +43,7 @@ const Dashboard = () => {
           <ChartSection />
 
           {/* Employee Table */}
-          <EmployeeTable employees={employees} />
+          <EmployeeTable employees={filteredEmployees} />
         </main>
       </div>
     </div>

@@ -1,13 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
 
   const linkClass = (path) =>
-    `block px-4 py-2 rounded ${
-      location.pathname === path
-        ? "bg-blue-600 text-white"
-        : "text-gray-700 hover:bg-gray-200"
+    `block px-4 py-2 rounded ${location.pathname === path
+      ? "bg-blue-600 text-white"
+      : "text-gray-900 hover:bg-gray-200"
     }`;
 
   return (
@@ -21,6 +21,9 @@ const Sidebar = () => {
 
         <Link to="/tasks" className={linkClass("/tasks")}>
           Tasks
+        </Link>
+        <Link to="/employees" className={linkClass("/employees")}>
+          Employees
         </Link>
       </nav>
     </div>

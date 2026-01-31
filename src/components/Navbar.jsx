@@ -1,14 +1,37 @@
-const Navbar = () => {
+import { useNavigate } from "react-router-dom";
+
+const Navbar = ({ search, setSearch }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // clear any stored session data
+    localStorage.clear();
+
+    // redirect to login page
+    navigate("/login");
+  };
+
   return (
-    <div className="w-full h-16 bg-white shadow flex items-center justify-between px-6">
-      <h1 className="text-xl font-bold text-gray-800">Enterprise Dashboard</h1>
-      <div className="flex items-center space-x-4">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="border rounded px-2 py-1"
-        />
-        <button className="bg-blue-600 text-white px-4 py-1 rounded">
+    <div className="bg-white shadow px-6 py-4 flex justify-between items-center">
+      <h1 className="text-xl font-semibold">Enterprise Dashboard</h1>
+
+      <div className="flex gap-3 items-center">
+        {/* Search (only works where props are passed) */}
+        {setSearch && (
+          <input
+            type="text"
+            placeholder="Search employees..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="border px-3 py-2 rounded w-64"
+          />
+        )}
+
+        {/* Logout */}
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+        >
           Logout
         </button>
       </div>
